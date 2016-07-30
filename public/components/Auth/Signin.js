@@ -5,11 +5,11 @@ import { changeAuthField, signUserIn } from '../../actions';
 import { signin } from '../../auth';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { TextField, RaisedButton } from 'material-ui';
-import {blue500} from 'material-ui/styles/colors';
+import {greenA200} from 'material-ui/styles/colors';
 
 const styles = {
   floatingLabelFocusStyle: {
-      color: blue500
+      color: greenA200
   }
 };
 
@@ -39,10 +39,10 @@ class Signin extends Component {
     return (
       <MuiThemeProvider>
         <div>
-          <h2 className="form"> Sign In Page</h2>
           <form className="form" onSubmit={
             this.postSignin.bind(this)
           }>
+            <h2> Sign In Page</h2>
             <TextField
               type="email"
               name="username"
@@ -63,8 +63,7 @@ class Signin extends Component {
             />
             <RaisedButton
               type="submit"
-              value="sign in"
-              secondary={true}
+              primary={true}
               label="Sign In"
             />
           </form>

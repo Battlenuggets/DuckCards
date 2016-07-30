@@ -1,5 +1,5 @@
 var Project = require('./projectModel');
-var User = require('../Users/userModel');
+var User = require('../users/userModel');
 var jwt = require('jwt-simple');
 var secret = process.env.SECRET || 'whatyoudontlikefalafel';
 
