@@ -3,7 +3,6 @@ import { Link } from 'react-router';
 import { connect } from 'react-redux';
 import { fetchProjects, createProject } from '../../actions/projects';
 import ProjectCreator from './ProjectCreator';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import {List, ListItem} from 'material-ui/List';
 import Divider from 'material-ui/Divider';
 
@@ -22,14 +21,12 @@ class Dashboard extends Component {
 
   render () {
     return (
-      <MuiThemeProvider>
-        <List>
-          {this.props.projects.map((project) => {
-            return (<ListItem><Link to={ '/project/' + project._id }>{ project.name }</Link></ListItem>);
-          })}
-          <ProjectCreator onCreate={this.onCreate.bind(this)} />
-        </List>
-      </MuiThemeProvider>
+      <List className="list">
+        {this.props.projects.map((project) => {
+          return (<ListItem><Link to={ '/project/' + project._id }>{ project.name }</Link></ListItem>);
+        })}
+        <ProjectCreator onCreate={this.onCreate.bind(this)} />
+      </List>
     );
   }
 }

@@ -70,10 +70,11 @@ p {
   letter-spacing: 0.019em;
 }
 
-/* ------ Header ------ */
-header {
-  position: fixed;
-  top: 0;
+/* ------------------------------------------------- */
+/* DASH BOARD*/
+/* ------------------------------------------------- */
+.list {
+  width: 30%;
 }
 
 /* ------------------------------------------------- */
@@ -150,7 +151,7 @@ header {
   color: #67809F;
 }
 
-.navBar{
+.navBar {
  background-color: #67809F;
  position: fixed;
  top: 0;
@@ -160,6 +161,6 @@ header {
  height: 50px;
 }
 
- .form{
+.form {
   text-align: center;
- }
+}
