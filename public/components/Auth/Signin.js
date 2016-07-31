@@ -3,6 +3,8 @@ import { withRouter } from 'react-router';
 import { connect } from 'react-redux';
 import { changeAuthField, signUserIn } from '../../actions';
 import { signin } from '../../auth';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import { TextField, RaisedButton } from 'material-ui';
 
 class Signin extends Component {
   constructor(props) {
@@ -28,28 +30,34 @@ class Signin extends Component {
 
   render() {
     return (
-      <form onSubmit={
-        this.postSignin.bind(this)
-      }>
-        <input
-          type="email"
-          name="username"
-          placeholder="email"
-          value={this.props.username}
-          onChange={this.onFieldChange.bind(this)}
-        />
-        <input
-          type="password"
-          name="password"
-          placeholder="password"
-          value={this.props.password}
-          onChange={this.onFieldChange.bind(this)}
-        />
-        <input
-          type="submit"
-          value="sign in"
-        />
-      </form>
+      <MuiThemeProvider>
+        <div>
+          <form className="form" onSubmit={
+            this.postSignin.bind(this)
+          }>
+            <h2> Sign In Page</h2>
+            <TextField
+              type="email"
+              name="username"
+              floatingLabelText="Enter Your Email"
+              value={this.props.username}
+              onChange={this.onFieldChange.bind(this)}
+            />
+            <TextField
+              type="password"
+              name="password"
+              floatingLabelText="Enter Your Password"
+              value={this.props.password}
+              onChange={this.onFieldChange.bind(this)}
+            />
+            <RaisedButton
+              type="submit"
+              primary={true}
+              label="Sign In"
+            />
+          </form>
+        </div>
+      </MuiThemeProvider>
     );
   }
 }

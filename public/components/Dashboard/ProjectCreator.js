@@ -1,20 +1,23 @@
 import React from 'react';
+import { TextField, RaisedButton } from 'material-ui';
 
 const ProjectCreator = ({ onCreate }) => {
   let input;
 
   return (
     <div>
-      Create project
+      <h2>Create project</h2>
         <form>
-          <input ref={node => { input = node; }} type="text" name="name" placeholder="name" />
+          <input ref={node => { input = node; }} type="text" name="name" placeholder="Project Name" required/>
         </form>
-        <button onClick={() => {
+        <RaisedButton onClick={() => {
           onCreate(input.value);
           input.value = '';
-        }}>
-          create
-        </button>
+        }}
+          type="submit"
+          primary={true}
+          label="Create"
+        />
     </div>
   );
 };

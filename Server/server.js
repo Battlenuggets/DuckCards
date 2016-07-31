@@ -2,8 +2,8 @@ var express = require("express");
 var bodyParser = require("body-parser");
 var path = require('path');
 var http = require('http');
-var userRoutes = require('./Users/userRoutes');
-var projectRoutes = require('./Projects/projectRoutes');
+var userRoutes = require('./users/userRoutes');
+var projectRoutes = require('./projects/projectRoutes');
 
 var app = express();
 var server = http.createServer(app);

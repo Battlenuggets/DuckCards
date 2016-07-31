@@ -3,6 +3,8 @@ import { Link } from 'react-router';
 import { connect } from 'react-redux';
 import { fetchProjects, createProject } from '../../actions/projects';
 import ProjectCreator from './ProjectCreator';
+import {List, ListItem} from 'material-ui/List';
+import Divider from 'material-ui/Divider';
 
 class Dashboard extends Component {
   constructor(props) {
@@ -19,13 +21,12 @@ class Dashboard extends Component {
 
   render () {
     return (
-      <div>
-        Hi
+      <List className="list">
         {this.props.projects.map((project) => {
-          return (<div><Link to={ '/project/' + project._id }>{ project.name }</Link></div>);
+          return (<ListItem><Link to={ '/project/' + project._id }>{ project.name }</Link></ListItem>);
         })}
         <ProjectCreator onCreate={this.onCreate.bind(this)} />
-      </div>
+      </List>
     );
   }
 }
