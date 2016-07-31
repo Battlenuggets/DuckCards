@@ -5,13 +5,6 @@ import { changeAuthField, signUserIn } from '../../actions';
 import { signin } from '../../auth';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { TextField, RaisedButton } from 'material-ui';
-import {greenA200} from 'material-ui/styles/colors';
-
-const styles = {
-  floatingLabelFocusStyle: {
-      color: greenA200
-  }
-};
 
 class Signin extends Component {
   constructor(props) {
@@ -47,8 +40,6 @@ class Signin extends Component {
               type="email"
               name="username"
               floatingLabelText="Enter Your Email"
-              floatingLabelStyle={styles.floatingLabelStyle}
-              floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
               value={this.props.username}
               onChange={this.onFieldChange.bind(this)}
             />
@@ -56,8 +47,6 @@ class Signin extends Component {
               type="password"
               name="password"
               floatingLabelText="Enter Your Password"
-              floatingLabelStyle={styles.floatingLabelStyle}
-              floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
               value={this.props.password}
               onChange={this.onFieldChange.bind(this)}
             />
